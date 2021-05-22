@@ -1,0 +1,1 @@
+define(["jquery","underscore","mage/storage","Eloom_Core/js/model/url-builder"],function(g,h,b,c){return{revgeocode:function(a,d,e){return b.post(c.createUrl("/eloom/geolocation/revgeocode",{}),JSON.stringify({lat:d,lng:e}),!1).done(function(f){f?a.resolve():a.reject()}).fail(function(){a.reject()})}}});

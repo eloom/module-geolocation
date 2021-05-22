@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	
+	<preference for="Eloom\Geolocation\Api\AutocompleteInterface" type="Eloom\Geolocation\Model\Autocomplete" />
+	<preference for="Eloom\Geolocation\Api\GeoIpInterface" type="Eloom\Geolocation\Model\GeoIp" />
+	<preference for="Eloom\Geolocation\Api\HereInterface" type="Eloom\Geolocation\Model\Here" />
+	<preference for="Eloom\Geolocation\Model\ResourceModel\PostalCode\EngineResolverInterface" type="Eloom\Geolocation\Model\ResourceModel\PostalCode\EngineResolver"/>
+	
+	<type name="Eloom\Geolocation\Model\Adminhtml\System\Config\Source\PostalCode\Engine">
+		<arguments>
+			<argument name="engines" xsi:type="array">
+				<item name="correios" xsi:type="string">Correios (BRA)</item>
+			</argument>
+		</arguments>
+	</type>
+	<type name="Eloom\Geolocation\Model\Adminhtml\System\Config\Source\PostalCode\Engine">
+		<arguments>
+			<argument name="engines" xsi:type="array">
+				<item name="viacep" xsi:type="string">ViaCEP (BRA)</item>
+			</argument>
+		</arguments>
+	</type>
+	
+	<type name="Eloom\Geolocation\Model\ResourceModel\PostalCode\EngineHandlerFactory">
+		<arguments>
+			<argument name="handlers" xsi:type="array">
+				<item name="correios" xsi:type="string">Eloom\Geolocation\Model\ResourceModel\PostalCode\CorreiosHandler</item>
+				<item name="viacep" xsi:type="string">Eloom\Geolocation\Model\ResourceModel\PostalCode\ViaCepHandler</item>
+			</argument>
+		</arguments>
+	</type>
+	
+	<type name="Eloom\Geolocation\Model\ResourceModel\PostalCode\EngineResolver">
+		<arguments>
+			<argument name="engines" xsi:type="array">
+				<item name="correios" xsi:type="string">correios</item>
+				<item name="viacep" xsi:type="string">viacep</item>
+			</argument>
+			<argument name="defaultEngine" xsi:type="string">correios</argument>
+			<argument name="path" xsi:type="string">eloom_geolocation/postalcode/engine</argument>
+			<argument name="scopeType" xsi:type="string">default</argument>
+		</arguments>
+	</type>
+</config>

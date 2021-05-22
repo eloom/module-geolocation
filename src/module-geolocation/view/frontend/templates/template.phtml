@@ -1,0 +1,19 @@
+<?php
+/* @var $block \Eloom\Geolocation\Block\Template */
+?>
+<script>
+	window.eloomGeolocation = <?php echo $block->getSerializedConfig();?>
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                        "eloom-geolocation": {
+                            "component": "Eloom_Geolocation/js/component/address-information"
+                        }
+                    }
+                }
+            }
+    }
+</script>

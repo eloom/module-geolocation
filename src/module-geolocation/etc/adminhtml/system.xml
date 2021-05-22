@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="eloom_geolocation" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Geolocation</label>
+			<tab>eloom</tab>
+			<resource>Eloom_Geolocation::config</resource>
+			<group id="information" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Information</label>
+				<frontend_model>Eloom\Geolocation\Block\Adminhtml\System\Config\Information</frontend_model>
+			</group>
+			
+			<group id="postalcode" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>PostalCode Settings</label>
+				<field id="engine" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+					<label>PostalCode Provider</label>
+					<source_model>Eloom\Geolocation\Model\Adminhtml\System\Config\Source\PostalCode\Engine</source_model>
+					<comment><![CDATA[]]></comment>
+				</field>
+			</group>
+			
+			<group id="geolocation" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Geolocation Settings</label>
+				<field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+					<label>Active</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Active Geolocation</comment>
+				</field>
+				
+				<field id="upload" translate="label comment" type="button" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+					<frontend_model>Eloom\Geolocation\Block\Adminhtml\Settings\Upload</frontend_model>
+					<depends>
+						<field id="active">1</field>
+					</depends>
+				</field>
+				
+				<field id="here_api_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+					<label>HERE REST Api Key</label>
+					<depends>
+						<field id="active">1</field>
+					</depends>
+					<validate>required-entry</validate>
+					<comment><![CDATA[Create your account <a href="https://developer.here.com/pricing" target="blank">here</a>.]]></comment>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

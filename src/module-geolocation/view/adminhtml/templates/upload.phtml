@@ -1,0 +1,22 @@
+<?php /* @var $block \Eloom\Geolocation\Block\Adminhtml\Settings\Upload */?>
+<button id="eloom-upload"
+        class="action-default scalable"
+        data-ui-id="widget-button-0" type="button" title="<?php echo $block->escapeHtml(__('Update Geolocation Database')) ?>">
+	<span><?php echo $block->escapeHtml(__('Update Geolocation Database')) ?></span>
+</button>
+<br/><br/>
+<div class="progress">
+	<span class="upload" style="display:none;"><?php echo $block->escapeHtml(__('Wait. Sending file.')) ?></span>
+	<span class="completed" style="display:none;"><?php echo $block->escapeHtml(__("File sent")) ?></span>
+</div>
+<br/>
+<div><?php echo $block->escapeHtml(__("Geolocation Database")) ?>: <span class="filename"><?php echo $block->getGeoIpFilePath(); ?></span></div>
+
+<script type="text/javascript">
+	require([
+		'jquery',
+		'Eloom_Geolocation/js/upload'
+	], function ($) {
+		$('#eloom-upload').dbIp(<?php echo $block->getConfig(); ?>);
+	});
+</script>

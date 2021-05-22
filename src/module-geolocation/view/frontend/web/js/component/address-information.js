@@ -1,0 +1,1 @@
+define(["jquery","uiComponent","Eloom_Geolocation/js/model/geolocation","Eloom_Geolocation/js/storage"],function(d,a,b,c){return a.extend({defaults:{},initialize:function(){this._super();c.hasData()||b()}})});
