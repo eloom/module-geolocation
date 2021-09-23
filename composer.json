@@ -21,12 +21,12 @@
   "support": {
     "email": "suporte@eloom.com.br"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "dev-main",
   "prefer-stable" : true,
   "require": {
     "php": "~7.3|~7.4",
     "magento/framework": "103.0.*",
-    "eloom/module-core": "dev-main"
+    "eloom/module-core": "@dev"
   },
   "license": [
     "OSL-3.0",
