@@ -2,7 +2,9 @@
 /* @var $block \Eloom\Geolocation\Block\Template */
 ?>
 <script>
-	window.eloomGeolocation = <?php echo $block->getSerializedConfig();?>
+	window.eloom = window.eloom || {};
+	window.eloom.geolocation = window.eloom.geolocation || {};
+	window.eloom.geolocation = <?php echo $block->getSerializedConfig();?>
 </script>
 <script type="text/x-magento-init">
     {

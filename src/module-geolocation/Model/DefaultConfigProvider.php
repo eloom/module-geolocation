@@ -34,7 +34,7 @@ class DefaultConfigProvider implements ConfigProviderInterface {
 		$storeId = $this->getStoreId();
 		
 		return [
-			'geolocation' => $this->helper->isGeolocationActive($storeId)
+			'active' => $this->helper->isGeolocationActive($storeId)
 		];
 	}
 	
