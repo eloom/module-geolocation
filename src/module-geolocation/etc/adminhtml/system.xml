@@ -21,15 +21,6 @@
 				</field>
 			</group>
 			
-			<group id="postalcode" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-				<label>PostalCode Settings</label>
-				<field id="engine" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
-					<label>PostalCode Provider</label>
-					<source_model>Eloom\Geolocation\Model\Adminhtml\System\Config\Source\PostalCode\Engine</source_model>
-					<comment><![CDATA[]]></comment>
-				</field>
-			</group>
-			
 			<group id="geolocation" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
 				<label>Geolocation Settings</label>
 				<field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">

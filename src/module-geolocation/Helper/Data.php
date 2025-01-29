@@ -21,8 +21,6 @@ use Magento\Store\Model\ScopeInterface;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper {
 	
-	const XML_PATH_ADDRESS_PROVIDER = 'eloom_geolocation/general/address_provider';
-	
 	const XML_PATH_GEOLOCATION_ACTIVE = 'eloom_geolocation/geolocation/active';
 	
 	const XML_PATH_GEOIP_FILENAME = 'eloom_geolocation/geolocation/file_name';
@@ -44,10 +42,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
 	public function getGeoIpFilePath() {
 		$file = $this->varDirectory . DIRECTORY_SEPARATOR . DbIpUpload::BASE_PATH . DIRECTORY_SEPARATOR . $this->getGeoIpFileName();
 		return $file;
-	}
-	
-	public function addressProvider($storeId = 0): string {
-		return $this->scopeConfig->getValue(self::XML_PATH_ADDRESS_PROVIDER, ScopeInterface::SCOPE_STORE, $storeId);
 	}
 	
 	public function isGeolocationActive($storeId = 0) {

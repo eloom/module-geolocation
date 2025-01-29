@@ -3,8 +3,7 @@
 ?>
 <script>
 	window.eloom = window.eloom || {};
-	window.eloom.geolocation = window.eloom.geolocation || {};
-	window.eloom.geolocation = <?php echo $block->getSerializedConfig();?>
+	window.eloom = <?php echo $block->getSerializedConfig();?>
 </script>
 <script type="text/x-magento-init">
     {
